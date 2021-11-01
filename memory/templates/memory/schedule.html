@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+		<div id="schedules">
+			<div class="schedule">■ 스케줄 관리</div>
+			<div class="schedule_add"><a href="sccreate">+ 스케줄 추가</a></div>
+			<div class="schedule_table">
+				<table>
+					<tr>
+						<th>no</th>
+						<th>제목</th>
+						<th>내용</th>
+						<th>날짜</th>
+					</tr>
+					{% for sc in schedule %}
+					<tr>
+						<td><a href="{% url 'memory:scdetail' sc.id %}">{{ sc.id }}</a></td>
+						<td><a href="{% url 'memory:scdetail' sc.id %}">{{ sc.title }}</a></td>
+						<td><a href="{% url 'memory:scdetail' sc.id %}">{{ sc.memo }}</a></td>
+						<td>{{ sc.date }}</td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+			
+		</div>
+		<div class="clear"></div>
+		
+{% endblock %}

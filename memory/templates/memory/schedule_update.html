@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		
+		<div id="schedule_add">
+			<div class="schedule">■ 스케줄 등록</div>
+			<form action="" method="post" enctype="multipart/form-data" id="scform">
+
+				<!--<p class="title">제목</p><input type="text" name="title" id="sc_title"/>
+			<p class="title">일정</p><input type="date" name="start_date" id="sc_date"/> ~ <input type="date" name="end_date" id="sc_date"/></p>-->
+			s
+			{% csrf_token %}
+				{{ form.as_p }}
+			<!--<p class="title">장소</p><input type="text" name="jangso" id="sc_jangso"/>
+			<p class="title">내용</p><textarea id="sc_memo" name="memo" cols="100" rows="5"></textarea>
+			<p class="title">초대받은사람</p><input id="sc_people" type="text" name="people"/>-->
+			<input type="submit" value="확인" id="sc_submit"/>
+			</form>
+		</div>
+		
+		<div class="clear"></div>
+		
+{% endblock %}

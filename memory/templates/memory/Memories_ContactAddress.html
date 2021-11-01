@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+		
+		<div id="address_">
+			<h3>■ address</h3>
+			<input type="search" id="searchname" placeholder="검색" />
+			<input type="button" value="검색" id="searchbtn"/>
+			<div class="address_submenu">
+				<ul>
+					<li><a href="#ㄱ">ㄱ</a></li>
+					<li><a href="#ㄴ">ㄴ</a></li>
+					<li><a href="#ㄷ">ㄷ</a></li>
+					<li><a href="#ㄹ">ㄹ</a></li>
+					<li><a href="#ㅁ">ㅁ</a></li>
+					<li><a href="#ㅂ">ㅂ</a></li>
+					<li><a href="#ㅅ">ㅅ</a></li>
+					<li><a href="#ㅇ">ㅇ</a></li>
+					<li><a href="#ㅈ">ㅈ</a></li>
+					<li><a href="#ㅊ">ㅊ</a></li>
+					<li><a href="#ㅋ">ㅋ</a></li>
+					<li><a href="#ㅌ">ㅌ</a></li>
+					<li><a href="#ㅍ">ㅍ</a></li>
+					<li><a href="#ㅎ">ㅎ</a></li>
+					<li><a href="#&">&</a></li>
+				</ul>
+			</div>
+			<div class="add">
+				<a href="addcreate">+ 연락처 추가</a>
+			</div>
+
+			<div class="address_contents">
+				<div id="ㄱ" class="move">전체</div>
+				{% for add in address %}
+				<div class="contents">
+					<div class="people">
+						<a href="{% url 'memory:adddetail' add.id %}">{{ add.name }}</a>
+					</div>
+				</div>
+				{% endfor %}
+				<!--<div id="ㄴ" class="move">ㄴ</div>
+					<div class="contents">
+						<div class="people">
+							<a href="#">나란히</a>
+						</div>
+					</div>
+				
+				<div id="ㄷ" class="move">ㄷ</div>
+					<div class="contents">
+						<div class="people">
+							<a href="#">다람쥐</a>
+						</div>
+					</div>
+					
+				<div id="ㄹ" class="move">ㄹ</div>
+				<div id="ㅁ" class="move">ㅁ</div>
+				<div id="ㅂ" class="move">ㅂ</div>
+				<div id="ㅅ" class="move">ㅅ</div>
+				<div id="ㅇ" class="move">ㅇ</div>
+				<div id="ㅈ" class="move">ㅈ</div>
+				<div id="ㅊ" class="move">ㅊ</div>
+				<div id="ㅋ" class="move">ㅋ</div>
+				<div id="ㅌ" class="move">ㅌ</div>
+				<div id="ㅍ" class="move">ㅍ</div>
+				<div id="ㅎ" class="move">ㅎ</div>
+				<div id="&" class="move">&</div>-->
+			</div>
+
+		</div>
+		<div class="clear"></div>
+{% endblock %}

@@ -1,0 +1,132 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+	section{height:900px; font-family:"맑은 고딕";}
+	footer{
+		height:160px;
+		margin-top:150px;
+		background-color:rgba(145,132,127,0.9);
+		color:#FFFFFF;
+		overflow:hidden;
+
+		}
+	.logo3>a>img{
+		position:relative;
+		width:18px;
+		padding:5px;
+		left:1600px;
+		bottom:-50px;
+	}
+
+	.CONTACTKR{
+		position:absolute;
+		float:left;
+		left:50px;
+		top:1250px;
+
+
+	}
+	.CONTACTKR1{
+		position:absolute;
+		left:200px;
+		top:1230px;
+		float:left;
+	}
+	.SERVICES{
+		position:absolute;
+		left:530px;
+		top:1250px;
+		float:left;
+
+
+	}
+	.SERVICES1{
+		position:absolute;
+		left:680px;
+		top:1230px;
+		float:left;
+	}
+
+	.INFORMATION{
+		position:absolute;
+		left:1030px;
+		top:1250px;
+		float:left;
+	}
+	.INFORMATION1{
+		position:absolute;
+		left:1200px;
+		top:1230px;
+		float:left;
+	}
+
+	#article{
+		width:1200px;
+		margin-left:420px;
+		margin-top:-880px;
+		position:relative;
+		}
+	.body{ width:1200px; height:810px;  margin-top:900px; margin-left:-450px;}
+	.body>p { font-size:40px; margin-left:40px; padding:10px; }
+
+	.nametwo{margin:7px; margin-left:40px; padding:20px; font-size:15px;
+			position:relative; top:100px;}
+
+	input{
+		position:relative; width:300px; height:30px; border:none; border-bottom:1px solid gray; display:block;
+		background:none; line-light:30px;
+	}
+	#sub{margin-left:50px;border-radius:15px; width:200px; height:50px;
+			padding:10px; margin:7px; text-align:center;
+			border:1px solid gray; float:left;
+			position:relative;left:40px;
+			top:80px;}
+.CONTACTKR{
+	position:absolute;
+	float:left;
+	left:50px;
+	top:1300px; /*top:1400px;*/
+}
+.CONTACTKR1{
+	position:absolute;
+	left:200px;
+	top:1300px; /*top:1400px;*/
+	float:left;
+}
+.SERVICES{
+	position:absolute;
+	left:530px;
+	top:1300px; /*top:1400px;*/
+	float:left;
+}
+.SERVICES1{
+	position:absolute;
+	left:680px;
+	top:1300px; /*top:1360px;*/
+	float:left;
+}
+.INFORMATION{
+	position:absolute;
+	left:1030px;
+	top:1300px; /*top:1050px;*/
+	float:left;
+}
+.INFORMATION1{
+	position:absolute;
+	left:1200px;
+	top:1300px; /*top:1050px;*/
+	float:left;
+}
+</style>
+<body>
+
+			<div class="body">
+				<p><img src="{% static 'images\people_3.png'%}" alt="noimage">{{new_user.username}} 회원가입 축하합니다.</p>
+				<div class="nametwo">
+
+				</div>
+			</div>
+
+</body>
+{% endblock %}

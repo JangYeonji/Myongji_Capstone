@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+		<div id="signup">
+			<div class="signup_">■ 회원가입</div>
+			<form id="signup_form" action="" method="post" enctype="multipart/form-data">
+				{% csrf_token %}
+				{{ form.as_p }}
+				<!--<p class="signup_title">이름</p><input class="signuptext" type="text" name="name" placeholder="실제 이름을 입력해주세요."/>
+				<p class="signup_title">주민등록번호</p>
+				<input type="text" class="signuptext"/> - <input type="password" class="signuptext"/>
+				<p class="signup_title">아이디</p><input type="text" class="signuptext"/>
+				<p class="signup_title">비밀번호</p><input type="password" class="signuptext"/>
+				<p class="signup_title">주소</p><input type="text" class="signuptext"/>
+				<p class="signup_title">전화번호</p><input type="tel" class="signuptext"/>
+				<p class="signup_title">이메일</p><input type="email" class="signuptext"  placeholder="****@****.***"/><br><br>-->
+				<input type="submit" value="회원가입" class="signup_btn"/>
+			</form>
+		</div>
+		<div class="clear"></div>
+
+
+		{% endblock %}

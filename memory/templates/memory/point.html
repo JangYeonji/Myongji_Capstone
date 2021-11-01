@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+   $(document).ready(function(){
+   var sum =0;
+
+   {% for mo in money %}
+      sum += {{mo.money}}
+   {% endfor %}
+
+      $(".point_bold").html(sum);
+
+   });
+</script>
+
+      <div id="point">
+         <div class="schedule">■ 포인트 관리</div>
+         <p class="coin_add"><a href="mocreate">+ 충전하기</a></p>
+         <p class="coin_add"><a href="pocreate">+ 선물추가하기</a></p>
+         <div class="point_table">
+            <table>
+               <tr>
+                  <th>no</th>
+                  <th>포인트</th>
+                  <th>보낸 사람</th>
+                  <th>받는 사람</th>
+                  <th>날짜</th>
+               </tr>
+               {% for po in point %}
+               <tr>
+                  <td><a href="#">{{ po.id }}</a></td>
+                  <td><a href="#">{{ po.point }}원</a></td>
+                  <td><a href="#">{{ po.receiver }}</a></td>
+                  <td><a href="#">{{ po.sender }}</a> </td>
+                  <td>{{ po.date }}</td>
+               </tr>
+               {% endfor %}
+
+            </table>
+            <div class="point_coin">
+               <p>충전 포인트</p>
+
+               <p class="point_bold">
+
+               </p><p> 원</p>
+
+            </div>
+         </div>
+
+      <div class="clear"></div>
+
+{% endblock %}

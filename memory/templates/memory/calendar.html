@@ -1,0 +1,108 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+
+			//달력 script문 
+			var cYear = new Date().getFullYear();
+			var cMonth = new Date().getMonth();
+			var cDate = new Date().getDate();
+			var now = new Date().getDay();
+			var dd = $("td");
+
+			var cal = function(){
+				$("#year").html(cYear);
+				$("#month").html(cMonth+1);
+
+				for(var i=0; i<42; i++)
+					dd.eq(i).html("&nbsp");
+
+				var startIndex = new Date(cYear, cMonth, 1).getDay(); //5
+				var monLength = 32 - new Date(cYear, cMonth, 32).getDate(); //31
+				var date = 1;
+				for(var i=startIndex; i<monLength+startIndex; i++){
+					dd.eq(i).html(date);
+					date = date + 1;
+				}
+				dd.eq(cDate+startIndex-1).addClass('ddeq');
+
+				$("#today").html(cYear + '.' + (cMonth+1) + '.' + cDate);
+			};
+
+			cal();
+
+			$("#prev").click(function(){
+				cYear = new Date(cYear, cMonth-1, cDate).getFullYear();
+				cMonth = new Date(cYear, cMonth-1, cDate).getMonth();
+				cal(cYear, cMonth);
+
+				for(var i=0;i<45;i++)
+					dd.eq(i).removeClass('ddeq');
+					
+				return false;
+			});
+			$("#next").click(function(){
+				cYear = new Date(cYear, cMonth+1, cDate).getFullYear();
+				cMonth = new Date(cYear, cMonth+1, cDate).getMonth();
+				cal(cYear, cMonth);
+
+				for(var i=0;i<45;i++)
+					dd.eq(i).removeClass('ddeq');
+					
+				return false;
+			});
+
+		});
+	</script>
+		
+		<div id="calendar">
+			<div class="month_bar">
+				<caption>
+					<span id="year"></span><br>						
+					<a href="#" id="prev"><img id="il" width="40px"src="{% static 'image\btn\prev.png' %}" alt="이전달"/></a>
+					<span id="month"></span>
+					<a href="#" id="next"><img id="ir" width="40x" src="{% static 'image\btn\next.png' %}" alt="다음달"/></a>
+				</caption>
+			</div>
+			<div class="add">
+				<a class="" href="{% url 'memory:sccreate' %}">+ 스케줄추가</a>
+			</div>
+			<table class="calheader" >
+					<th>SUN</th><th>MON</th><th>TUE</th><th>WED</th>
+					<th>THU</th><th>FRI</th><th>SAT</th>
+			</table>
+			<table class="calbody" border="1" >
+					<tr class="date">
+						<tr>
+							<td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td>
+							<td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td>
+							<td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td>
+							<td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td>
+							<td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td>
+							<td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td>
+						</tr>
+						<tr>
+							<td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td>
+							<td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td><td align="left" valign="top">&nbsp;</td>
+						</tr>
+					</tr>
+			</table>
+			
+		</div>
+		<div class="clear"></div>
+		
+{% endblock %}

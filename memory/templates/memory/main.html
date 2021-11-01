@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+		
+		<div class="imageslide">
+			<img src="{% static 'image\slideimage\image(2).jpg' %}" alt="imageslide(1)"/>
+		</div>
+		<div class="clear"></div>
+		
+		<div class="content">
+			<div id="schedule" class="image_btn">
+				<img src="{% static 'image\icon\calendar.png' %}" alt="schedule" />
+				<h4>스케줄 관리</h4>
+				<p>하루 일정을 보여주는 메모리즈 캘린더를 사용하면 <br>효율적인 일정관리를 할 수 있습니다.</p>
+			</div>
+			<div id="address" class="image_btn">
+				<img src="{% static 'image\icon\address.png' %}" alt="address" />
+				<h4>연락처 관리</h4>
+				<p>소중한 사람들의 연락처를 등록하여  <br>효율적인 일정관리를 할 수 있습니다.</p>
+			</div>
+			<div id="pointt" class="image_btn">
+				<img src="{% static 'image\icon\point.png' %}" alt="point" />
+				<h4>포인트 관리</h4>
+				<p>포인트를 통하여 소중한 사람들 또는 <br>어려운 이웃에게 기부를 할 수 있습니다.</p>
+			</div>
+		</div>
+		<div class="clear"></div>
+
+{% endblock %}

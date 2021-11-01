@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+		
+		<div id="address_add">
+			<div class="add_prev"><a href="{% url 'memory:Memories_ContactAddress' %}"> < 이전으로</a></div>
+			<div class="add_picture">
+				<div class="picture"><img src="{% static 'image\icon\add_picture.png' %}" alt="사용자이미지"/></div><br>
+				<ul class="audit">
+					<li><a href="{% url 'memory:addupdate' object.id %}"><img src="{% static 'image\icon\addit.png' %}" alt="수정"/></a></li>
+					<li><a href="{% url 'memory:adddelete' object.id %}" class="delete"><img src="{% static 'image\icon\trash.png' %}" alt="삭제"/></a></li>
+				</ul>
+			</div>
+			<div class="add_contents">
+				<p class="title">이름</p><p>{{ object.name }}</p>
+				<p class="title">연락처</p><p>{{ object.tel }}</p>
+				<p class="title">소속</p><p>{{ object.work }}</p>
+				<p class="title">이메일</p><p>{{ object.mail }}</p>
+				<p class="title">생일</p><p>{{ object.birth }}</p>
+				<p class="title">메모</p><p>{{ object.memo }}</p>
+			</div>
+		</div>
+		<div class="clear"></div>
+		
+{% endblock %}

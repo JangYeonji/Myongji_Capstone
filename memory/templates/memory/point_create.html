@@ -1,0 +1,80 @@
+<style>
+
+   #point2{width:1200px;}
+</style>
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<script>
+   $(document).ready(function(){
+   var sum =0;
+
+   {% for mo in money %}
+      sum += {{mo.money}}
+   {% endfor %}
+
+      $(".point_bold").html(sum);
+
+   });
+</script>
+<style>
+	.money_create{position:fixed; background:rgba(0,0,0,0.5); width:100%; height:100%; left:0; top:0;}
+	.money_create .body{width:300px; height:300px; background:white; border-radius:20px; margin-top:150px; padding:10px;}
+	#cancel{display:inline-block; padding:5px; border:none; border-radius:10px; margin-left:10px; cursor:pointer;}
+	.money_title{text-align:center; font-size:1.2em; font-weight:bold; display:block;}
+</style>
+		<div id="point">
+         <div class="schedule">■ 포인트 관리</div>
+         <p class="coin_add"><a href="mocreate">+ 충전하기</a></p>
+         <p class="coin_add"><a href="pocreate">+ 선물추가하기</a></p>
+         <div class="point_table">
+            <table>
+               <tr>
+                  <th>no</th>
+                  <th>포인트</th>
+                  <th>보낸 사람</th>
+                  <th>받는 사람</th>
+                  <th>날짜</th>
+               </tr>
+               {% for po in point %}
+               <tr>
+                  <td><a href="#">{{ po.id }}</a></td>
+                  <td><a href="#">{{ po.point }}원</a></td>
+                  <td><a href="#">{{ po.receiver }}</a></td>
+                  <td><a href="#">{{ po.sender }}</a> </td>
+                  <td>{{ po.date }}</td>
+               </tr>
+               {% endfor %}
+
+            </table>
+            <div class="point_coin">
+               <p>충전 포인트</p>
+
+               <p class="point_bold">
+
+               </p><p> 원</p>
+
+            </div>
+         </div>
+		</div>
+
+      <div class="clear"></div>
+		  <div class="clear">
+			<div class="money_create">
+				<div class="body">
+					<div class="point_table">
+						<p class="money_title">포인트 선물하기</p>
+						<form action="" method="post" enctype="multipart/form-data">
+							{% csrf_token %}
+							{{ form.as_p }}
+						<input type="submit" value="선물하기" id="posubmit">
+						<a href="{% url 'memory:point' %}"><input type="button" class="money_submit" value="취소" id="cancel"></a>
+						</form>
+					</div>
+				</div>
+			</div>
+		  </div>
+
+
+
+{% endblock %}

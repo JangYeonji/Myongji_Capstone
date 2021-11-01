@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+		
+		<div id="address_edit">
+			<div class="add_prev">■ 연락처 수정</div>
+			<div class="add_picture">
+				<div class="picture"><img src="{% static 'image\icon\add_picture.png' %}" alt="사용자이미지"/></div><br>
+			</div>
+			<div class="add_contents">
+				<form action="" method="post" enctype="multipart/form-data">
+					{% csrf_token %}
+					{{ form.as_p }}
+				<!--<p class="title">이름</p><input type="text" name="name" />
+				<p class="title">연락처</p><input type="tel" name="address" />
+				<p class="title">소속</p><input type="text" name="belong" />
+				<p class="title">이메일</p><input type="email" name="belong" />
+				<p class="title">생일</p><input type="date" name="birthday" />
+				<p class="title">메모</p><textarea id="textbox" name="memo" cols="100" rows="5"></textarea>-->
+				<br>
+				<input type="submit" id="save" value="저장하기"/>
+				</form>
+			</div>
+		</div>
+		<div class="clear"></div>
+{% endblock %}

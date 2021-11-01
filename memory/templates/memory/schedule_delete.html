@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+		
+		<div id="schedule_look">
+			<div class="schedule_look">■ 스케줄 확인</div>
+			<hr>
+			<p class="title_look">{{ object.title }}</p>
+			<hr><br>
+			<p class="schedule_title"> 일정 : </p><p class="schedule_startday">{{ object.date }}</p><p class="schedule_endday">~ {{ object.date }}</p><br>
+			<p class="schedule_title">장소 : </p><p class="schedule_place">{{ object.place }}</p><br>
+			<p class="schedule_title">내용 : </p><p class="schedule_memo">{{ object.memo }}</p><br>
+
+			<a href="{% url 'memory:schedule' %}"><button type="button" class="schedule_action">확인</button></a>
+			<a href="{% url 'memory:scupdate' object.id %}"><button type="button" class="schedule_edit">수정</button></a>
+			<a href="{% url 'memory:scdelete' object.id %}"><button type="button" class="schedule_edit">삭제</button></a>
+		</div>
+		<div class="clear"></div>
+		
+		<div id="schedule_modal">
+			<div class="body">
+				<p>스케줄을<br>삭제하시겠습니까?</p>
+				<form action="" method="post">
+					{% csrf_token %}
+				<input type="submit" id="confirm" value="확인"><button type="button" id="cancel" onclick="location.href='{% url 'memory:scdetail' object.id %}'">취소</button>
+				</form>
+			</div>
+		</div>
+{% endblock %}
