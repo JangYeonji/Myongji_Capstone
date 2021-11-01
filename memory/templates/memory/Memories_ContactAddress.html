@@ -2,7 +2,7 @@
 {% load static %}
 {% block content %}
 		
-		<div id="address_">
+		<div id="address_" style="height:822px;">
 			<h3>■ address</h3>
 			<input type="search" id="searchname" placeholder="검색" />
 			<input type="button" value="검색" id="searchbtn"/>
@@ -31,7 +31,9 @@
 
 			<div class="address_contents">
 				<div id="ㄱ" class="move">전체</div>
+
 				{% for add in address %}
+
 				<div class="contents">
 					<div class="people">
 						<a href="{% url 'memory:adddetail' add.id %}">{{ add.name }}</a>
@@ -44,7 +46,7 @@
 							<a href="#">나란히</a>
 						</div>
 					</div>
-				
+
 				<div id="ㄷ" class="move">ㄷ</div>
 					<div class="contents">
 						<div class="people">

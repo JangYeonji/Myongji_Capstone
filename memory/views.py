@@ -11,7 +11,7 @@ def intro(request):
     return render(request, 'memory/main.html')
 
 def contact(request):
-    address = Address.objects.filter(user=request.user)
+    address = Address.objects.filter(user=request.user).order_by('name')
     return render(request,'memory/Memories_ContactAddress.html',{'address':address})
 
 def create_address(request):
@@ -79,6 +79,12 @@ def schedule(request):
     schedule = Schedule.objects.filter(user2=request.user)
     return render(request, 'memory/schedule.html',{'schedule':schedule})
 
+
+def calendar(request):
+    schedule = Schedule.objects.filter(user2=request.user)
+    return  render(request, 'memory/calendar.html',{'schedule':schedule})
+
+
 def create_schedule(request):
     user_obj = User.objects.get(username=request.user.get_username())
     if request.method == 'POST':
@@ -113,6 +119,3 @@ def event(request):
     pass
     return  render(request, 'memory/event.html')
 
-def calendar(request):
-    pass
-    return  render(request, 'memory/calendar.html')

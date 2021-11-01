@@ -9,7 +9,26 @@
 
 				<!--<p class="title">제목</p><input type="text" name="title" id="sc_title"/>
 			<p class="title">일정</p><input type="date" name="start_date" id="sc_date"/> ~ <input type="date" name="end_date" id="sc_date"/></p>-->
-			s
+			<!--
+			<p class="title">범위</p>
+			<div class="range_color">
+				<input type="radio" name="color" id="color1"/>
+				<input type="radio" name="color" id="color2"/>
+				<input type="radio" name="color" id="color3"/>
+				<input type="radio" name="color" id="color4"/>
+				<input type="radio" name="color" id="color5"/>
+				<input type="radio" name="color" id="color6" checked="checked"/>
+				<ul class="color_list">
+					<li><label for="color1"><img src="{% static 'image\icon\color(1).png' %}" class="color1" alt="yellow"/></label></li>
+					<li><label for="color2"><img src="{% static 'image\icon\color(2).png' %}" class="color2" alt="green"/></label></li>
+					<li><label for="color3"><img src="{% static 'image\icon\color(3).png' %}" class="color3" alt="skyblue"/></label></li>
+					<li><label for="color4"><img src="{% static 'image\icon\color(4).png' %}" class="color4" alt="purple"/></label></li>
+					<li><label for="color5"><img src="{% static 'image\icon\color(5).png' %}" class="color5"alt="pink"/></label></li>
+					<li><label for="color6"><img src="{% static 'image\icon\color(6).png' %}" class="color6" alt="gray"/></label></li>
+				</ul>
+			</div>
+			-->
+			<br>
 			{% csrf_token %}
 				{{ form.as_p }}
 			<!--<p class="title">장소</p><input type="text" name="jangso" id="sc_jangso"/>

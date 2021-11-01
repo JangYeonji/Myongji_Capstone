@@ -5,26 +5,27 @@
 	<script>
 		$(document).ready(function(){
 
-			//달력 script문 
-			var cYear = new Date().getFullYear();
+			//달력 script문
+			var cYear = new Date().getFullYear();	//현재
 			var cMonth = new Date().getMonth();
 			var cDate = new Date().getDate();
 			var now = new Date().getDay();
-			var dd = $("td");
+			var dd = $("td");	//td 42개
 
 			var cal = function(){
 				$("#year").html(cYear);
+
 				$("#month").html(cMonth+1);
 
 				for(var i=0; i<42; i++)
-					dd.eq(i).html("&nbsp");
+					dd.eq(i).html("&nbsp");	//달력 전체 공백 초기화
 
-				var startIndex = new Date(cYear, cMonth, 1).getDay(); //5
-				var monLength = 32 - new Date(cYear, cMonth, 32).getDate(); //31
+				var startIndex = new Date(cYear, cMonth, 1).getDay(); //5	//현재달의 시작 일
+				var monLength = 32 - new Date(cYear, cMonth, 32).getDate(); //31	//몇일까지 있는지?
 				var date = 1;
 				for(var i=startIndex; i<monLength+startIndex; i++){
-					dd.eq(i).html(date);
 					date = date + 1;
+					dd.eq(i).html(date-1);
 				}
 				dd.eq(cDate+startIndex-1).addClass('ddeq');
 
@@ -40,7 +41,7 @@
 
 				for(var i=0;i<45;i++)
 					dd.eq(i).removeClass('ddeq');
-					
+
 				return false;
 			});
 			$("#next").click(function(){
@@ -50,24 +51,24 @@
 
 				for(var i=0;i<45;i++)
 					dd.eq(i).removeClass('ddeq');
-					
+
 				return false;
 			});
 
 		});
 	</script>
-		
-		<div id="calendar">
+
+		<div id="calendar" style="height:1000px;">
 			<div class="month_bar">
 				<caption>
-					<span id="year"></span><br>						
+					<span id="year"></span><br>
 					<a href="#" id="prev"><img id="il" width="40px"src="{% static 'image\btn\prev.png' %}" alt="이전달"/></a>
 					<span id="month"></span>
 					<a href="#" id="next"><img id="ir" width="40x" src="{% static 'image\btn\next.png' %}" alt="다음달"/></a>
 				</caption>
 			</div>
 			<div class="add">
-				<a class="" href="{% url 'memory:sccreate' %}">+ 스케줄추가</a>
+				<a href="{% url 'memory:sccreate' %}">+ 일정추가</a>
 			</div>
 			<table class="calheader" >
 					<th>SUN</th><th>MON</th><th>TUE</th><th>WED</th>
@@ -101,8 +102,10 @@
 						</tr>
 					</tr>
 			</table>
-			
+
+
 		</div>
+		<br><br>
 		<div class="clear"></div>
-		
+
 {% endblock %}

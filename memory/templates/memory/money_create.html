@@ -1,76 +1,31 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<script>
-   $(document).ready(function(){
-   var sum =0;
-
-   {% for mo in money %}
-      sum += {{mo.money}}
-   {% endfor %}
-
-      $(".point_bold").html(sum);
-
-   });
-</script>
 <style>
 	label{visibility:hidden; margin:-30px;}
 	input:nth-child(2){float:left;}
-	.money_create{position:fixed; background:rgba(0,0,0,0.5); width:100%; height:100%; left:0; top:0;}
-	.money_create .body{width:300px; height:150px; background:white; border-radius:20px; margin-top:150px;}
-	.money_create p {display:inline-block;}
-	.money_input{margin-top:30px; margin-left:70px;}
-	.money_submit{margin-top:20px; margin-left:90px;}
-	.money_title{text-align: center; width:100%; margin-top:20px; font-weight:bold;}
-	input{float:left;}
-	#sub{display:inline-block; padding:5px; border:none; border-radius:5px; background:rgb(203,150,97); color:white; cursor:pointer;}
-	#cancel{display:inline-block; padding:5px; border:none; border-radius:5px; margin-left:10px; cursor:pointer;}
 </style>
-		<div id="point">
-			 <div class="schedule">■ 포인트 관리</div>
-			 <p class="coin_add"><a href="mocreate">+ 충전하기</a></p>
-			 <p class="coin_add"><a href="pocreate">+ 선물추가하기</a></p>
-			 <div class="point_table">
+		<div id="point2" style="height:842px;">
+			<div class="schedule">■ 포인트 충전하기</div>		
+			<div class="point_table">
 				<table>
-				   <tr>
-					  <th>no</th>
-					  <th>포인트</th>
-					  <th>보낸 사람</th>
-					  <th>받는 사람</th>
-					  <th>날짜</th>
-				   </tr>
-				   {% for po in point %}
-				   <tr>
-					  <td><a href="#">{{ po.id }}</a></td>
-					  <td><a href="#">{{ po.point }}원</a></td>
-					  <td><a href="#">{{ po.receiver }}</a></td>
-					  <td><a href="#">{{ po.sender }}</a> </td>
-					  <td>{{ po.date }}</td>
-				   </tr>
-				   {% endfor %}
-
-				</table>
-				<div class="point_coin">
-				   <p>충전 포인트</p>
-
-				   <p class="point_bold">
-
-				   </p><p> 원</p>
-
-				</div>
-			 </div>
-
-		  <div class="clear">
-			<div class="money_create">
-				<div class="body">
-					<form action="" method="post" enctype="multipart/form-data" id="moneyform">
+					<tr>
+						<th>no</th>
+						<th>충전할 금액</th>
+						<th>내용</th>
+						<th>비고</th>
+					</tr>
+					<tr>
+						<form action="" method="post" enctype="multipart/form-data" id="moneyform">
+							<td><a href="#">01</a></td>
 							{% csrf_token %}
-						<p class="money_title">충전금액 입력</p><br>
-						<p class="money_input">{{ form.as_p }}</p><p class="won">원</p><br>
-							<input type="submit" class="money_submit" value="충전하기" id="sub">
-							<a href="{% url 'memory:point' %}"><input type="button" class="money_submit" value="취소" id="cancel"></a>
-					</form>
-				</div>
+							<td>{{ form.as_p }}원</td>
+							<td><a href="#">포인트 충전</a></td>
+							<td><input type="submit" value="충전하기" id="sub"></td>
+						</form>
+					</tr>
+				</table>
 			</div>
-		  </div>
+		<div class="clear"></div>
+		</div>
 {% endblock %}

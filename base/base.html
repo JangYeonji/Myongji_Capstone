@@ -21,10 +21,10 @@
 			<li><a href="{%url 'logout' %}">logout</a></li>
 			{%else%}
 			<li><a href="{% url 'login' %}">address</a></li>
-			<li><a href="{% url 'memory:calendar' %}">calendar</a></li>
+			<li><a href="{% url 'login' %}">calendar</a></li>
 			<li><a href="{% url 'login' %}">schedule</a></li>
 			<li><a href="{% url 'login' %}">point</a></li>
-			<li><a href="{% url 'memory:event' %}">event</a></li>
+			<li><a href="{% url 'login' %}">event</a></li>
 			<li><a href="{%url 'login' %}">login</a></li>
 			{%endif%}
 		</nav>
