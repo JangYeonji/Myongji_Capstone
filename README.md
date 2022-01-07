@@ -2,14 +2,24 @@
 
 ### 구축 환경
 - 언어
+<img src="https://img.shields.io/badge/Python-3766AB?style=flat-square&logo=Python&logoColor=white"/></a>
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a> 
 <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/></a>
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/></a>
-<img src="https://img.shields.io/badge/Python-3766AB?style=flat-square&logo=Python&logoColor=white"/></a>
 - 프레임워크
 <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white"/></a>
-- 데이터베이스 :
+- 에디터 
+<img src="https://img.shields.io/badge/PyCharm-000000?style=flat-square&logo=PyCharm&logoColor=white"/></a>
 
+### 참여 인원
+- 6명
+
+### 담당한 부분
+
+### 개발 기간
+- 2019.03 ~ 2019.06
+
+### 특징
 
 ### 구현 화면
 ![image](https://user-images.githubusercontent.com/86348868/148521225-7e395179-6cca-4111-b5a2-06dd4bc4c920.png)
@@ -30,4 +40,6 @@
 ![image](https://user-images.githubusercontent.com/86348868/148521660-dfeddf6c-3826-43ec-8030-4c8867f181da.png)
 ![image](https://user-images.githubusercontent.com/86348868/148521695-20fca5a9-8f94-43ee-9163-c6c69a176406.png)
 ![image](https://user-images.githubusercontent.com/86348868/148521714-3ce9c1e3-5919-49fa-ae0a-0072e9e6f991.png)
+
+
 
