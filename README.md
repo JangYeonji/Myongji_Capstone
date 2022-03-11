@@ -28,11 +28,13 @@
 - **포인트 충전** 기능 및 **누적내역** 표시
 
 ### Realization
-- **Python 웹 표준 라이브러리**에 대해 이애하게 됨.
-- Django의 웹 프레임워크인 **MVT 패턴**을 활용할 수 있음.
-- Django의 **Admin 사이트**를 사용할 수 있음.
-- Django Python 쉘로 **데이터 생성, 조회, 수정, 삭제**할 수 있음.
-- Django의 **폼** 기능과 **클래스형 뷰**를 사용할 수 있음.
+- 처음으로 Framework를 사용하여 프로젝트를 만든 값진 경험
+- Python 문법 복습 및 활용
+- 제공해주는 기능(Admin, Model)이 많은 Django를 직접 사용
+- 스스로에게 주는 피드백
+  - 기능 차별화 필요
+  - Flask를 사용한 프로젝트 필요
+  - Cloud 기반으로 서비스 배포 필요
 
 ### Screenshot
 ![image](https://user-images.githubusercontent.com/86348868/148521225-7e395179-6cca-4111-b5a2-06dd4bc4c920.png)
