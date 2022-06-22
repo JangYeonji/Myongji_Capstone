@@ -10,8 +10,6 @@
 - Language
 <img src="https://img.shields.io/badge/Python-3766AB?style=flat-square&logo=Python&logoColor=white"/></a>
 <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat-square&logo=JavaScript&logoColor=white"/></a>
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat-square&logo=HTML5&logoColor=white"/></a> 
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat-square&logo=CSS3&logoColor=white"/></a>
 - Framework
 <img src="https://img.shields.io/badge/Django-092E20?style=flat-square&logo=Django&logoColor=white"/></a>
 - Tool
@@ -21,20 +19,13 @@
 - 6명
 
 ### Part
-- Django의 **회원가입, 로그인, 로그아웃** 기능
-- **연락처** 및 **스케줄 추가, 편집, 삭제** 기능
-- 연락처 **정렬** 기능
-- 오늘이 있는 달의 **달력** 표시
-- **포인트 충전** 기능 및 **누적내역** 표시
+- 어드민 개발 생산성을 높이기 위해 **Django의 관리자 페이지** 기능 사용
+- Django 내장 **회원관리 및 모델** 기능 사용
+- 연락처, 스케줄 **CRUD**
 
-### Realization
-- 처음으로 Framework를 사용하여 프로젝트를 만든 값진 경험
-- Python 문법 복습 및 활용
-- 제공해주는 기능(Admin, Model)이 많은 Django를 직접 사용
-- 스스로에게 주는 피드백
-  - 기능 차별화 필요
-  - Flask를 사용한 프로젝트 필요
-  - Cloud 기반으로 서비스 배포 필요
+### Architecture
+![image](https://user-images.githubusercontent.com/86348868/174976193-6c9e4685-9fd6-4817-9ecc-6e2bdeb97666.png)
+
 
 ### Screenshot
 ![image](https://user-images.githubusercontent.com/86348868/148521225-7e395179-6cca-4111-b5a2-06dd4bc4c920.png)
